@@ -42,3 +42,30 @@ as a formatted table in the terminal.
 
 ## GitHub Repository
 https://github.com/iamrashya/weather-agent
+
+## New Features Added
+- Humidity and rainfall data from Open-Meteo hourly API
+- PDF export using reportlab → saved to /reports folder
+- Flask web dashboard at http://localhost:5000
+- Hourly scheduler using schedule library
+- Email sender using Gmail SMTP with PDF attachment
+- Indian metro cities added to the weather list
+
+## New Files
+- export_pdf.py   → generates PDF weather report
+- send_email.py   → sends email with PDF attachment via Gmail
+- app.py          → Flask web dashboard on port 5000
+- scheduler.py    → runs full workflow every 60 minutes
+
+## How to Run Each Feature
+- Terminal table only:     python agent.py
+- Web dashboard:           python app.py → open http://localhost:5000
+- Full hourly scheduler:   python scheduler.py
+- One-time PDF + email:    python scheduler.py (runs once immediately)
+
+## Environment Variables Needed in .env
+- GITHUB_USERNAME
+- REPO_NAME
+- GMAIL_SENDER
+- GMAIL_RECIPIENTS
+- GMAIL_APP_PASSWORD
